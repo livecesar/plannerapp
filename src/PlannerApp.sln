@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerApp", "PlannerApp\PlannerApp.csproj", "{3BAF9DBE-D22A-4D5B-B2A1-1B094093220A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerApp.Shared", "PlannerApp.Shared\PlannerApp.Shared.csproj", "{0CD8486D-6533-4C80-8C36-5331A6B0332E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3BAF9DBE-D22A-4D5B-B2A1-1B094093220A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BAF9DBE-D22A-4D5B-B2A1-1B094093220A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BAF9DBE-D22A-4D5B-B2A1-1B094093220A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD8486D-6533-4C80-8C36-5331A6B0332E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD8486D-6533-4C80-8C36-5331A6B0332E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD8486D-6533-4C80-8C36-5331A6B0332E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD8486D-6533-4C80-8C36-5331A6B0332E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
