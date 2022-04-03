@@ -19,6 +19,6 @@ builder.Services.AddScoped(sp => sp.GetService<IHttpClientFactory>().CreateClien
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddAuthorizationCore();
-builder.Services.AddScoped<AuthenticationStateProvider, JwtAuthemticationStateProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider, JwtAuthenticationStateProvider>();
 
 await builder.Build().RunAsync();

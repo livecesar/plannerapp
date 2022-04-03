@@ -1,23 +1,31 @@
 ﻿using Blazored.LocalStorage;
+using System;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 
-public class AuthorizationMessageHandler : DelegatingHandler 
+namespace PlannerApp
 {
-    private readonly ILocalStorageService _storage;
-    public AuthorizationMessageHandler(ILocalStorageService storage)
+    public class AuthorizationMessageHandler : DelegatingHandler
     {
-        _storage = storage;
-    }
 
-    protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-    {
-        if (await _storage.ContainKeyAsync("access_token"))
+        private readonly ILocalStorageService _storage;
+
+        public AuthorizationMessageHandler(ILocalStorageService storage)
         {
-            var token = await _storage.GetItemAsStringAsync("access_token");
-            request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
+            _storage = storage; 
         }
 
-        Console.WriteLine("Authorization hitted!");
-        return await base.SendAsync(request, cancellationToken);
+        protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            if (await _storage.ContainKeyAsync("access_token"))
+            {
+                var token = await _storage.GetItemAsStringAsync("access_token");
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token); 
+            }
+            Console.WriteLine("Authorization Message Handler Called");
+            return await base.SendAsync(request, cancellationToken); 
+        }
+
     }
 }
