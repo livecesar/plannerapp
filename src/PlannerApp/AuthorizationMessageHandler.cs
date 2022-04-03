@@ -17,6 +17,7 @@ public class AuthorizationMessageHandler : DelegatingHandler
 
         }
 
+        Console.WriteLine("Authorization hitted!");
         return await base.SendAsync(request, cancellationToken);
     }
 }

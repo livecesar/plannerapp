@@ -7,7 +7,7 @@ public class ApiResponse
     public bool IsSuccess { get; set; }
 }
 
-public class ApiResponse<T>
+public class ApiResponse<T> : ApiResponse
 {
     public T Value { get; set; }
 }
